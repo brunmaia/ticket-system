@@ -59,7 +59,7 @@ class TicketController extends Controller
             'description'=> 'required',
             'technitian'=> 'required'
         ]);
-        DB::table('tickets')->where('tickets.id',$request->ticket_id)->update(['status'=>$request->input('status')]);
+
 
         DB::table('ticket_updates')->insert([
             'ticket_id'=>$request->ticket_id,
@@ -69,5 +69,9 @@ class TicketController extends Controller
 
         ]);
         return redirect()->route('home')->with('message','Ticket added with success!');
+    }
+    public function updateStatus(Request $request,$id){
+        DB::table('tickets')->where('tickets.id',$id)->update(['status'=>$request->input('status')]);
+        return redirect()->route('allTickets')->with('message','Ticket updated with success!');
     }
 }

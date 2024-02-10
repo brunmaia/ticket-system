@@ -31,4 +31,4 @@ Route::post('/create-ticket', [TicketController::class, 'createTicket'])->name('
 Route::get('/add-ticket', [TicketController::class, 'addTicket'])->name('addTicket');
 Route::get('/view-ticket/{id}', [TicketController::class, 'viewTicket'])->name('viewTicket');
 Route::post('/update-ticket', [TicketController::class, 'updateTicket'])->name('updateTicket');
-Route::post('/update-status', [TicketController::class, 'updateStatus'])->name('updateStatus');
+Route::patch('/view-ticket/{id}/update-status', [TicketController::class, 'updateStatus'])->name('updateStatus');

@@ -17,7 +17,8 @@
 
 <div class="container">
 
-    <table class="table table-striped" style="text-align: center">
+    <table class="table table-striped" style="text-align: center; vertical-align: middle">
+
 
         <thead>
             <tr>

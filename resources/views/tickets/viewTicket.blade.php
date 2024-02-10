@@ -17,7 +17,6 @@
                 </select>
             </div>
             <div class="col-md-3 d-flex align-items-bottom">
-                <label for=""></label>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
@@ -25,15 +24,20 @@
     </form>
 </div>
 <div class="container">
-    <p>
-        <b>Ticket id:</b>{{ $ticket->id }} <br>
-        <b>Created at:</b> <br> {{ $ticket->created_at }} <br>
+    <div>
+        <table class="table">
+            <tr>
+                <th scope="col">Ticket id: {{ $ticket->id }}</th>
+                <th scope="col">Created at: {{ $ticket->created_at }}</th>
+                <th scope="col">Creator: {{ $ticket->creator }}</th>
+                <th scope="col">Status: {{ $ticket->status }}</th>
+            </tr>
+        </table>
         <b>Subject:</b>{{ $ticket->subject }} <br>
         <b>Description:</b> <br> {{ $ticket->description }} <br>
-        <b>Creator:</b>{{ $ticket->creator }} <br>
-        <b>Status:</b>{{ $ticket->status }}
 
-    </p>
+    </div>
+    <p></p>
     @if($ticketUpdate->isNotEmpty())
     @foreach ($ticketUpdate as $update)
     <p>
